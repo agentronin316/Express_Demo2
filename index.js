@@ -26,6 +26,7 @@ const students = {
 };
 
 server.get("/students/name/:name", (req, res) => {
+    let { name } = req.params;
     if (name) {
         const student = students[name.toLowerCase()];
         if (student) {
@@ -38,6 +39,8 @@ server.get("/students/name/:name", (req, res) => {
 });
 
 server.get("/students/city/:city", (req, res) => {
+    let { city } = req.params;
+    let tempStudents = Object.values(students);
     if (city) {
         return res.send(
             tempStudents.filter(
@@ -48,6 +51,8 @@ server.get("/students/city/:city", (req, res) => {
 });
 
 server.get("/students/interest/:interest", (req, res) => {
+    let { interest } = req.params;
+    let tempStudents = Object.values(students);
     if (interest) {
         return res.send(
             tempStudents.filter((stu) =>

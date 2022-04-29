@@ -100,6 +100,12 @@ server.get("/coffee", (req, res) => {
     res.status(418).send({ error: "I'm a teapot" });
 });
 
+server.get("/tea", (req, res) => {
+    res.send(
+        '<img src="https://i.kym-cdn.com/entries/icons/mobile/000/015/878/thatsnoneofmy.jpg"/>'
+    );
+});
+
 server.get("/rickroll", (req, res) => {
     res.redirect("https://youtu.be/bubOcI11sps");
 });

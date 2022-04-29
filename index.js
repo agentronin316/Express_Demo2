@@ -100,6 +100,10 @@ server.get("/coffee", (req, res) => {
     res.status(418).send({ error: "I'm a teapot" });
 });
 
+server.get("/rickroll", (req, res) => {
+    res.redirect("https://youtu.be/bubOcI11sps");
+});
+
 server.post("/destinations", (req, res) => {
     let { destination, location, photo, description } = req.body;
     if (
